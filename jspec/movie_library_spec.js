@@ -87,7 +87,7 @@ describe('Movie Library', function(){
 
     originalMovies = [indianaJonesAndTheTempleOfDoom, cars, aBugsLife, theresSomethingAboutMary, piratesOfTheCarribean, yoursMineAndOurs, shrek];
 
-    sut = build.movieLibrary(originalMovies);
+    sut = build.movieLibrary(originalMovies);                                                                       
 
     describe('Searching for movies', function(){
       it('Can find all pixar movies', function(){
