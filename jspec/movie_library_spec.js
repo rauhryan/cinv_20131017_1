@@ -91,7 +91,8 @@ describe('Movie Library', function(){
 
     describe('Searching for movies', function(){
       it('Can find all pixar movies', function(){
-        results = sut.allPixarMovies();
+        filter = Filter.onAttribute('studio').equalTo(STUDIOS.PIXAR);
+        results = sut.allMovies().filter(filter);
 
         expect(results).toEqual([cars, aBugsLife]);
       });
