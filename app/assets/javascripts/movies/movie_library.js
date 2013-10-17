@@ -19,16 +19,9 @@
   }
 
   proto.allMoviesNotPublishedByPixar = function () {
-     var matches = [];
-
-     for(var index = 0; index < this.movies.length; index++) {
-       var movie = this.movies[index];
-       if(movie.studio !== STUDIOS.PIXAR){
-         matches.push(movie);
-       }
-     }
-
-     return matches;
+     return this.movies.filter(function(){
+       this.studio !== STUDIOS.PIXAR;
+     })
   }
 
   proto.allPixarOrDisneyMovies = function () {
