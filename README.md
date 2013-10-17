@@ -12,7 +12,7 @@ Google. To get started:
   - npm install -g karma
 * Install bower
   - npm install -g bower
-* Install the local copies of the js requirement
+   Install the local copies of the js requirement
   - cd jspec
   - bower install
 
