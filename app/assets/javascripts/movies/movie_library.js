@@ -23,6 +23,12 @@
      return this.studio === STUDIOS.PIXAR;
   }
 
+  proto.allMovies = function () {
+    return this.movies.filter(function(){
+      return true;
+    })
+  }
+
   proto.allPixarOrDisneyMovies = function () {
      return this.movies.filter(this.isPixarMovie.or(this.isDisneyMovie));
   }
