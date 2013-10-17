@@ -26,7 +26,7 @@ Google. To get started:
   INFO [launcher]: Starting browser PhantomJS
   INFO [PhantomJS 1.8 (Mac)]: Connected on socket id WT8wEr49DmRqo-on3ka3
 
-* karm run 
+* karma run 
 
   PhantomJS 1.8 (Mac): Executed 4 of 4 SUCCESS (0.183 secs / 0.013 secs)
     
