@@ -6,16 +6,9 @@
   var proto = MovieLibrary.prototype;
 
   proto.allPixarMovies = function () {
-     var matches = [];
-
-     for(var index = 0; index < this.movies.length; index++) {
-       var movie = this.movies[index];
-       if(movie.studio === STUDIOS.PIXAR){
-         matches.push(movie);
-       }
-     }
-
-     return matches;
+    return this.movies.filter(function() {
+      return this.studio === STUDIOS.PIXAR;
+    });
   }
 
   proto.allMoviesNotPublishedByPixar = function () {
@@ -25,16 +18,20 @@
   }
 
   proto.allPixarOrDisneyMovies = function () {
-     var matches = [];
+     return this.movies.filter(function(){
+       return this.studio === STUDIOS.PIXAR || this.studio === STUDIOS.DISNEY;
+     })
+  }
 
-     for(var index = 0; index < this.movies.length; index++) {
-       var movie = this.movies[index];
-       if(movie.studio === STUDIOS.PIXAR || movie.studio === STUDIOS.DISNEY){
-         matches.push(movie);
-       }
-     }
-
-     return matches;
+  proto.allMoviesReleasedAfter = function (year) {
+     return this.movies.filter(function(){
+       return this.releaseDate.getFullYear() > year;
+     })
+  }
+  proto.allMoviesReleasedBetweenYears = function (start, end) {
+     return this.movies.filter(function(){
+       return this.releaseDate.getFullYear() >= start && this.releaseDate.getFullYear() <= end;
+     })
   }
 
   targetNamespace.MovieLibrary = MovieLibrary;
