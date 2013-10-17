@@ -1,0 +1,14 @@
+%meta{ :charset => "utf-8" }
+%meta{ :name => "description", :content => I18n.t('brand') }
+%meta{ :name => "author", :content => I18n.t('brand') }
+%link{ :rel => "shortcut icon", :href => "/favicon.ico" }
+
+= csrf_meta_tag
+
+= stylesheet_link_tag 'application', :media => 'all'
+= yield :additional_css_includes
+
+%style{ :type => "text/css" }
+  = yield :styles
+
+= yield :head

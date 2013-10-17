@@ -1,0 +1,12 @@
+{
+    "name": "aptus-bridge-specs",
+    "version": "0.0.1",
+    "main": ["aptus-bridge-specs.js"],
+    "dependencies": {
+        "ember": ">= 0",
+        "angular": ">= 0",
+        "jasmine": ">= 0",
+        "jasmine-jquery": ">= 0",
+        "jasmine-given": "https://github.com/searls/jasmine-given.git"
+    }
+}

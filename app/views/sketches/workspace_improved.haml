@@ -1,0 +1,32 @@
+!!!
+%head
+  = stylesheet_link_tag "application.css.sass"
+  = javascript_include_tag "application"
+  %body
+    - lenses = Lens.all
+    - items = Item.all
+    #top.division
+      = section :lenses, :text => "Lenses" do |builder|
+        - builder.heading do
+          = list_button_group(Lens) do |buttons|
+            - buttons.add_button(:settings, lenses_path, "Manage Lenses")
+
+        - builder.content do
+          .list
+            - lenses.each do |lens|
+              = lens(lens, nil)
+
+      = section :items, :text => "Items" do |builder|
+        - builder.heading do
+          = list_button_group(Item)
+
+        - builder.content do
+          .list
+            = render partial: "workspace/item", collection: items
+
+      #right.division
+        = render 'shared/map'
+        = render 'subjects'
+
+    #bottom.division
+      #timeline

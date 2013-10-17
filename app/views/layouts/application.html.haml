@@ -1,0 +1,15 @@
+!!!
+%head
+  = render "layouts/shared/title"
+  = render "layouts/shared/head"
+
+- Templates.each do |template_name|
+  - template template_name
+
+= body_tag do
+  %content
+    = render "layouts/application/header"
+    = render "layouts/shared/main"
+    = render "layouts/shared/footer"
+    = render "layouts/shared/tail"
+</html>

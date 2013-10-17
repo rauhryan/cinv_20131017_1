@@ -1,0 +1,5 @@
+= render "layouts/shared/flashes"
+#main(ng-app="app")
+  = yield :main_header
+  = content_for?(:main) ? yield(:main) : yield
+  = yield :main_footer
