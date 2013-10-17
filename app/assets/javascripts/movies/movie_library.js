@@ -1,5 +1,5 @@
 (function(targetNamespace){
-  function MovieLibrary(movies){
+  function MovieLibrary(movies) {
     this.movies = movies;
   }
 

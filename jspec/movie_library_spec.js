@@ -91,15 +91,17 @@ describe('Movie Library', function(){
 
     describe('Searching for movies', function(){
       it('Can find all pixar movies', function(){
-        filter = Filter.onAttribute('studio').equalTo(STUDIOS.PIXAR));
+        condition = Match.onAttribute('studio').equalTo(STUDIOS.PIXAR);
 
-        results = sut.allMovies().filter(filter);
+        results = sut.allMovies().filter(condition);
 
         expect(results).toEqual([cars, aBugsLife]);
       });
 
       it('Can find all pixar or disney movies', function(){
-        results = sut.allPixarOrDisneyMovies();
+        condition = Match.onAttribute('studio').equalAny(STUDIOS.PIXAR, STUDIOS.DISNEY);
+
+        results = sut.allMovies().filter(condition);
 
         expect(results).toEqual([cars, aBugsLife, piratesOfTheCarribean]);
       });

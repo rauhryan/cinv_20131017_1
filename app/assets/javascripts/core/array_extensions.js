@@ -7,6 +7,9 @@
      }
 
   }
+  Array.prototype.any = function(condition){
+
+  }
 
   Array.prototype.filter = function(condition){
      var matches = [];
