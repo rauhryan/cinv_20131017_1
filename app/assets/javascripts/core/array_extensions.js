@@ -8,7 +8,6 @@
 
   }
 
-
   Array.prototype.filter = function(condition){
      var matches = [];
 
@@ -18,5 +17,4 @@
 
      return matches;
   }
-
 })()

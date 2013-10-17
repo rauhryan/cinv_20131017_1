@@ -24,8 +24,7 @@
   }
 
   proto.allPixarOrDisneyMovies = function () {
-     return this.movies.filter(function(){
-     })
+     return this.movies.filter(this.isPixarMovie.or(this.isDisneyMovie));
   }
 
   proto.allMoviesReleasedAfter = function (year) {
