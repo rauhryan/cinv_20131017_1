@@ -6,9 +6,7 @@
   var proto = MovieLibrary.prototype;
 
   proto.allPixarMovies = function () {
-    return this.movies.filter(function() {
-      return this.studio === STUDIOS.PIXAR;
-    });
+    return this.movies.filter(this.isPixarMovie);
   }
 
   proto.allMoviesNotPublishedByPixar = function () {
@@ -17,9 +15,16 @@
      })
   }
 
+  proto.isDisneyMovie = function(){
+     return this.studio === STUDIOS.DISNEY;
+  }
+
+  proto.isPixarMovie = function(){
+     return this.studio === STUDIOS.PIXAR;
+  }
+
   proto.allPixarOrDisneyMovies = function () {
      return this.movies.filter(function(){
-       return this.studio === STUDIOS.PIXAR || this.studio === STUDIOS.DISNEY;
      })
   }
 

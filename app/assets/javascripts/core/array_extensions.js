@@ -1,6 +1,5 @@
 (function(){
 
-
   Array.prototype.forEach = function(callback){
 
      for(var index = 0; index < this.length; index++) {
