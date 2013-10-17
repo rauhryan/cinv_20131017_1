@@ -91,9 +91,13 @@ describe('Movie Library', function(){
 
     describe('Searching for movies', function(){
       it('Can find all pixar movies', function(){
+<<<<<<< HEAD
 
         filter = Filter.onAttribute('studio').equalTo(STUDIOS.PIXAR));
 
+=======
+        filter = Filter.onAttribute('studio').equalTo(STUDIOS.PIXAR);
+>>>>>>> pull_rauhryan_20131017114629826
         results = sut.allMovies().filter(filter);
 
         expect(results).toEqual([cars, aBugsLife]);

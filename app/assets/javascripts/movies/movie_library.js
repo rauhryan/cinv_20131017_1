@@ -5,16 +5,6 @@
 
   var proto = MovieLibrary.prototype;
 
-  proto.allPixarMovies = function () {
-    return this.movies.filter(this.isPixarMovie);
-  }
-
-  proto.allMoviesNotPublishedByPixar = function () {
-     return this.movies.filter(function(){
-       this.studio !== STUDIOS.PIXAR;
-     })
-  }
-
   proto.isDisneyMovie = function(){
      return this.studio === STUDIOS.DISNEY;
   }
@@ -26,12 +16,28 @@
   proto.allMovies = function () {
     return this.movies.filter(function(){
       return true;
+<<<<<<< HEAD
     })
+=======
+    });
+  }
+
+  proto.allPixarMovies = function () {
+    return this.movies.filter(this.isPixarMovie);
+>>>>>>> pull_rauhryan_20131017114629826
   }
 
   proto.allPixarOrDisneyMovies = function () {
      return this.movies.filter(this.isPixarMovie.or(this.isDisneyMovie));
   }
+
+  proto.allMoviesNotPublishedByPixar = function () {
+     return this.movies.filter(function(){
+       this.studio !== STUDIOS.PIXAR;
+     })
+  }
+
+
 
   proto.allMoviesReleasedAfter = function (year) {
      return this.movies.filter(function(){
