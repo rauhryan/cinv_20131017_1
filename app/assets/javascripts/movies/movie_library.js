@@ -5,16 +5,6 @@
 
   var proto = MovieLibrary.prototype;
 
-  proto.allPixarMovies = function () {
-    return this.movies.filter(this.isPixarMovie);
-  }
-
-  proto.allMoviesNotPublishedByPixar = function () {
-     return this.movies.filter(function(){
-       this.studio !== STUDIOS.PIXAR;
-     })
-  }
-
   proto.isDisneyMovie = function(){
      return this.studio === STUDIOS.DISNEY;
   }
@@ -23,9 +13,21 @@
      return this.studio === STUDIOS.PIXAR;
   }
 
+  proto.allPixarMovies = function () {
+    return this.movies.filter(this.isPixarMovie);
+  }
+
   proto.allPixarOrDisneyMovies = function () {
      return this.movies.filter(this.isPixarMovie.or(this.isDisneyMovie));
   }
+
+  proto.allMoviesNotPublishedByPixar = function () {
+     return this.movies.filter(function(){
+       this.studio !== STUDIOS.PIXAR;
+     })
+  }
+
+
 
   proto.allMoviesReleasedAfter = function (year) {
      return this.movies.filter(function(){
