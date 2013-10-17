@@ -16,15 +16,11 @@
   proto.allMovies = function () {
     return this.movies.filter(function(){
       return true;
-<<<<<<< HEAD
     })
-=======
-    });
   }
 
   proto.allPixarMovies = function () {
     return this.movies.filter(this.isPixarMovie);
->>>>>>> pull_rauhryan_20131017114629826
   }
 
   proto.allPixarOrDisneyMovies = function () {
