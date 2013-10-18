@@ -19,17 +19,19 @@
   }
   
   proto.equalAny = function() {
-    var args = Array.prototype.slice(arguments);
+    var args = Array.prototype.slice.call(arguments);
     var matcher = function(){
       return false;
     }
     var target = this;
+
     args.forEach(function(){
-      matcher = matcher.or(target.equalTo.call(this));
-    };
+      matcher = matcher.or(target.equalTo.call(target,this));
+    });
+
     return matcher;
   }
 
   targetNamespace.Match = proto;
 
-})(this);
+})(this)                                       
