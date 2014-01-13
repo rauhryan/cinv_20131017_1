@@ -4,22 +4,14 @@
         var listOfMovies = list;
         var response = {
             allPixarMovies: function(){
-                var result = [];
-                for(var i = 0; i < listOfMovies.length; i++){
-                    if(listOfMovies[i].studio===STUDIOS.PIXAR){
-                        result.push(listOfMovies[i]);
-                    }
-                }
-                return result;
+              return listOfMovies.filter(function() {
+                return this.studio === STUDIOS.PIXAR;
+              });
             }
             ,allPixarOrDisneyMovies: function(){
-                var result = [];
-                for(var i = 0; i < listOfMovies.length; i++){
-                    if(listOfMovies[i].studio===STUDIOS.PIXAR || listOfMovies[i].studio===STUDIOS.DISNEY){
-                        result.push(listOfMovies[i]);
-                    }
-                }
-                return result;
+              return listOfMovies.filter(function() {
+                // condition
+              });
             }
             ,allMoviesNotPublishedByPixar: function(){
 
