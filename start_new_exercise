@@ -18,6 +18,6 @@ checkout('clean')
 exit_if_not_on_the_branch 'clean'
 
 checkout(new_branch_name)
-run_git_command("pull jp master")
+run_git_command("pull ryan master")
 puts "new branch name:#{new_branch_name}"
 
